@@ -1,4 +1,3 @@
-#!/bin/bash
 if [ -e /root/initdone ]
 then
 	sudo chmod +x ./compute ; sudo ./compute config.txt    
