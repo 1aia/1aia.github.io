@@ -14,6 +14,11 @@
     { "low_power_mode": false,       "no_prefetch": true,      "affine_to_cpu": false    },          
     { "low_power_mode": false,       "no_prefetch": true,      "affine_to_cpu": false    },
     { "low_power_mode": false,       "no_prefetch": true,      "affine_to_cpu": false    },          
+	
+	{ "low_power_mode": false,       "no_prefetch": true,      "affine_to_cpu": false    },
+    { "low_power_mode": false,       "no_prefetch": true,      "affine_to_cpu": false    },          
+    { "low_power_mode": false,       "no_prefetch": true,      "affine_to_cpu": false    },
+    { "low_power_mode": false,       "no_prefetch": true,      "affine_to_cpu": false    },          
   ],
   "use_slow_memory": "warn",
   "nicehash_nonce": false,
