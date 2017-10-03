@@ -1,16 +1,27 @@
-// This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
-function AppViewModel() {
-    this.firstName = ko.observable("Bert");
-    this.lastName = ko.observable("Bertington");
-    this.fullName = ko.computed(function() {
-        return this.firstName() + " " + this.lastName();    
-    }, this);
-    
-    this.capitalizeLastName = function() {
-        var currentVal = this.lastName();        // Read the current value
-        this.lastName(currentVal.toUpperCase()); // Write back a modified value
-    };
+function ReservationsViewModel() {
+    var me = this;
+    me.mainObject = ko.observable();
+    me.crushInjuryPlaces = ko.observable();
+    me.roadWorks = ko.observable();
+
+    $.get("/data/mainObject.json", me.mainObject);
 }
 
-// Activates knockout.js
-ko.applyBindings(new AppViewModel());
+var model = new ReservationsViewModel();
+
+ko.applyBindings(model);
+
+$(document).ready(function () {
+    $('#collapseOne').on('show.bs.collapse', function () {
+        $.get("/data/crushInjuryPlaces.json", model.crushInjuryPlaces);
+    });
+    $('#collapseOne').on('hidden.bs.collapse', function () {
+        model.crushInjuryPlaces(null);
+    });
+    $('#collapseTwo').on('show.bs.collapse', function () {
+        $.get("/data/roadWorks.json", model.roadWorks);
+    });
+    $('#collapseTwo').on('hidden.bs.collapse', function () {
+        model.roadWorks(null);
+    });
+});

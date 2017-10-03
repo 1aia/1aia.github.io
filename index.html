@@ -1,51 +1,110 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Signin Template for Bootstrap</title>
-
+    <title>Тест</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-    
 
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-
-  </head>
-
-  <body>
-
+</head>
+<body>
     <div class="container">
+        <div>
+            <!-- ko if: mainObject() -->
 
-<!--       <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
+            <div data-bind="with: mainObject">
+                <table>
+                    <tbody data-bind="foreach: Attributes">
+                        <tr>
+                            <td><input class="form-control" data-bind="value: Name" /></td>
+                            <td><input class="form-control" data-bind="value: Value" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="accordion" role="tablist">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <h5 class="mb-0">
+                                <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">ДТП</a>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <!-- ko if: $root.crushInjuryPlaces -->
+                                    <table>
+                                        <tbody data-bind="foreach: $root.crushInjuryPlaces">
+                                            <tr>
+                                                <td><p class="form-control" data-bind="text: Name"></p> </td>
+                                                <td>
+                                                    <table>
+                                                        <tbody data-bind="foreach: Attributes">
+                                                            <tr>
+                                                                <td><input class="form-control" data-bind="value: Name" /></td>
+                                                                <td><input class="form-control" data-bind="value: Value" /></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                <!-- /ko -->
+                                <!-- ko ifnot: $root.crushInjuryPlaces -->
+                                    Loading...
+                                <!-- /ko -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingTwo">
+                            <h5 class="mb-0">
+                                <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Ремонт
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <!-- ko if: $root.roadWorks -->
+                                <table>
+                                    <tbody data-bind="foreach: $root.roadWorks">
+                                        <tr>
+                                            <td><p class="form-control" data-bind="text: Name"></p> </td>
+                                            <td>
+                                                <table>
+                                                    <tbody data-bind="foreach: Attributes">
+                                                        <tr>
+                                                            <td><input class="form-control" data-bind="value: Name" /></td>
+                                                            <td><input class="form-control" data-bind="value: Value" /></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- /ko -->
+                                <!-- ko ifnot: $root.roadWorks -->
+                                    Loading...
+                                <!-- /ko -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /ko -->
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form> -->
-
-      <div class="form-signin">
-        <input type="text" class="form-control" placeholder="First name" data-bind='value: firstName, valueUpdate: "afterkeydown"'  required autofocus>
-        <input type="text" class="form-control" placeholder="Last name" data-bind='value: lastName, valueUpdate: "afterkeydown"' required >
-        <strong data-bind="text: fullName "></strong>
-
-        <button class="btn btn-lg btn-primary btn-block" data-bind="click: capitalizeLastName">Go caps</button>
-      </div>
     </div> <!-- /container -->
+
     <script src="app.js"></script>
-  </body>
+</body>
 </html>
