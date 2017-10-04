@@ -17,7 +17,7 @@
 <body>
     <div class="container">
     
-        <!-- ko if: mainObject() -->
+        <!-- ko if: mainObject -->
         <div data-bind="foreach: mainObject().Attributes">
             <div class="row">
                 <label class="col col-xs-6 text-xs-right font-weight-bold" data-bind="text: Name + ':'"></label>
@@ -35,18 +35,18 @@
                 </div>
                 <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body p-a-1">
-                        <!-- ko if: $root.crushInjuryPlaces -->
+                        <!-- ko if: crushInjuryPlaces -->
                         <div class="row">
                             <div class="col-xs-4">
-                                <div class="list-group" data-bind="foreach: $root.crushInjuryPlaces">
+                                <div class="list-group" data-bind="foreach: crushInjuryPlaces">
                                     <a class="list-group-item list-group-item-action" href="#"
                                        data-bind="text: Name, click: $root.setCrushInjuryDetails, css: { active: $data == $root.crushInjuryPlaceDetails() }">
                                     </a>
                                 </div>
                             </div>
                             <div class="col-xs-8">
-                                <!-- ko if: $root.crushInjuryPlaceDetails -->
-                                <div class="" data-bind="foreach: $root.crushInjuryPlaceDetails().Attributes">
+                                <!-- ko if: crushInjuryPlaceDetails -->
+                                <div class="" data-bind="foreach: crushInjuryPlaceDetails().Attributes">
                                     <div class="row">
                                         <label class="col col-xs-6 text-xs-right font-weight-bold" data-bind="text: Name + ':'"></label>
                                         <label class="col col-xs-6" data-bind="text: Value"></label>
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <!-- /ko -->
-                        <!-- ko ifnot: $root.crushInjuryPlaces -->
+                        <!-- ko ifnot: crushInjuryPlaces -->
                         Loading...
                         <!-- /ko -->
                     </div>
@@ -72,18 +72,18 @@
                 </div>
                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
                     <div class="card-body p-a-1">
-                        <!-- ko if: $root.roadWorks -->
+                        <!-- ko if: roadWorks -->
                         <div class="row">
                             <div class="col-xs-4">
-                                <div class="list-group" data-bind="foreach: $root.roadWorks">
+                                <div class="list-group" data-bind="foreach: roadWorks">
                                     <a class="list-group-item list-group-item-action" href="#"
                                        data-bind="text: Name, click: $root.setRoadWorkDetails, css: { active: $data == $root.roadWorkDetails() }">
                                     </a>
                                 </div>
                             </div>
                             <div class="col-xs-8">
-                                <!-- ko if: $root.roadWorkDetails -->
-                                <div class="" data-bind="foreach: $root.roadWorkDetails().Attributes">
+                                <!-- ko if: roadWorkDetails -->
+                                <div class="" data-bind="foreach: roadWorkDetails().Attributes">
                                     <div class="row">
                                         <label class="col col-xs-6 text-xs-right font-weight-bold" data-bind="text: Name + ':'"></label>
                                         <label class="col col-xs-6" data-bind="text: Value"></label>
@@ -93,7 +93,7 @@
                             </div>
                         </div>
                         <!-- /ko -->
-                        <!-- ko ifnot: $root.roadWorks -->
+                        <!-- ko ifnot: roadWorks -->
                         Loading...
                         <!-- /ko -->
                     </div>
