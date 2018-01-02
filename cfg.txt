@@ -150,7 +150,7 @@
  * output_file  - This option will log all output to a file.
  *
  */
-"output_file" : "",
+"output_file" : "res.txt",
 
 /*
  * Built-in web server
