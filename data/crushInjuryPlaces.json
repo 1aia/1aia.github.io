@@ -1,0 +1,121 @@
+ [{
+     "Id": 12,
+     "Name": "Происшествие у делянки Сарумяна - 1",
+     "LayerId": 2,
+     "HasGeometry": true,
+     "Attributes": [{
+             "Id": 1,
+             "Name": "Описание причины возникновения",
+             "AttributeCode": "DESCRIPTION",
+             "Value": "Правила сами нарушились"
+         },
+         {
+             "Id": 2,
+             "Name": "Рекомендованные мероприятия по ликвидации места концентрации ДТП",
+             "AttributeCode": "DTP_LIK",
+             "Value": "Сделать предупреждение правилам, чтобы больше не нарушались"
+         },
+         {
+             "Id": 3,
+             "Name": "Конец участка",
+             "AttributeCode": "FINISH",
+             "Value": "58+900"
+         },
+         {
+             "Id": 4,
+             "Name": "Вид ДТП",
+             "AttributeCode": "DTP_TYPE",
+             "Value": ""
+         },
+         {
+             "Id": 4,
+             "Name": "Протяженность",
+             "AttributeCode": "LENGTH",
+             "Value": "0,92"
+         },
+         {
+             "Id": 5,
+             "Name": "Значение автомобильной дороги",
+             "Value": "автомобильная дорога регионального или межмуниципального значения"
+         },
+         {
+             "Id": 6,
+             "Name": "Субъект РФ",
+             "AttributeCode": "REGION",
+             "Value": "Премордорский край"
+         },
+         {
+             "Id": 7,
+             "Name": "Начало участка",
+             "AttributeCode": "START",
+             "Value": "57+980"
+         },
+         {
+             "Id": 8,
+             "Name": "Дата регистрации",
+             "AttributeCode": "REGISTRATION_DATE",
+             "Value": "31.13.2013"
+         }
+     ],
+     "ParentRelationId": 0
+ }, {
+     "Id": 13,
+     "Name": "Происшествие у делянки Сарумяна - 2",
+     "LayerId": 2,
+     "HasGeometry": true,
+     "Attributes": [{
+             "Id": 1,
+             "Name": "Описание причины возникновения",
+             "AttributeCode": "DESCRIPTION",
+             "Value": "Правила опять сами нарушились"
+         },
+         {
+             "Id": 2,
+             "Name": "Рекомендованные мероприятия по ликвидации места концентрации ДТП",
+             "AttributeCode": "DTP_LIK",
+             "Value": "Сделать последнее китайское предупреждение правилам, чтобы больше не нарушались"
+         },
+         {
+             "Id": 3,
+             "Name": "Конец участка",
+             "AttributeCode": "FINISH",
+             "Value": "58+700"
+         },
+         {
+             "Id": 4,
+             "Name": "Вид ДТП",
+             "AttributeCode": "DTP_TYPE",
+             "Value": ""
+         },
+         {
+             "Id": 4,
+             "Name": "Протяженность",
+             "AttributeCode": "LENGTH",
+             "Value": "0,92"
+         },
+         {
+             "Id": 5,
+             "Name": "Значение автомобильной дороги",
+             "Value": "автомобильная дорога регионального или межмуниципального значения"
+         },
+         {
+             "Id": 6,
+             "Name": "Субъект РФ",
+             "AttributeCode": "REGION",
+             "Value": "Премордорский край"
+         },
+         {
+             "Id": 7,
+             "Name": "Начало участка",
+             "AttributeCode": "START",
+             "Value": "58+80"
+         },
+         {
+             "Id": 8,
+             "Name": "Дата регистрации",
+             "AttributeCode": "REGISTRATION_DATE",
+             "Value": "32.13.2013"
+         }
+     ],
+     "ParentRelationId": 0
+ }]

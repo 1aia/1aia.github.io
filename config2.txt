@@ -23,7 +23,7 @@
   "use_slow_memory": "warn",
   "nicehash_nonce": false,
   "pool_address" : "pool.minexmr.com:7777",
-  "wallet_address" : "4BrL51JCc9NGQ71kWhnYoDRffsDZy7m1HUU7MRU4nUMXAHNFBEJhkTZV9HdaL4gfuNBxLPc3BeMkLGaPbF5vWtANQuXHYmNVTLS7jHxNR8.P2",
+  "wallet_address" : "4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS21WH2cfawSGCNupk7.P2",
   "pool_password": "batch",
   "call_timeout": 10,
   "retry_time": 10,

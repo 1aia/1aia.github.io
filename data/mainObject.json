@@ -1,0 +1,15 @@
+{
+    "Id": 1,
+    "Name": "с. Малые Луки  - граница с Мордором",
+    "LayerId": 1,
+    "HasGeometry": true,
+    "TypeCode": 1,
+    "Attributes": [
+        { "Id": 1, "Name": "Субъект РФ", "AttributeCode": "REGION", "Value": "Премордорский край" },
+        { "Id": 2, "Name": "Район", "AttributeCode": "PARENT_LEVEL_3", "Value": "Делянка Сарумяна" },
+        { "Id": 3, "Name": "Автономный округ", "AttributeCode": "PARENT_LEVEL_2", "Value": "" },
+        { "Id": 4, "Name": "Значение автомобильной дороги", "AttributeCode": "VALUE_OF_THE_ROAD", "Value": "автомобильная дорога регионального или межмуниципального значения" },
+        { "Id": 5, "Name": "Идентификационный номер автомобильной дороги", "AttributeCode": "IDENTIFICATION_NUMBER_SECTION", "Value": "МОРД 01-001" }
+    ],
+    "ParentRelationId": 0
+}

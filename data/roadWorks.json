@@ -1,0 +1,123 @@
+[{
+    "Id": 4,
+    "Name": "Прокладка туннеля гномами",
+    "LayerId": 3,
+    "HasGeometry": true,
+    "Attributes": [{
+            "Id": 1,
+            "Name": "Конец",
+            "AttributeCode": "FINISH",
+            "Value": "16+000"
+        },
+        {
+            "Id": 2,
+            "Name": "Субъект РФ",
+            "AttributeCode": "REGION",
+            "Value": "Премордорский край"
+        },
+        {
+            "Id": 3,
+            "Name": "Начало",
+            "AttributeCode": "START",
+            "Value": "16+000"
+        },
+        {
+            "Id": 4,
+            "Name": "Работа",
+            "AttributeCode": "WORK",
+            "Value": "Создание туннеля для кроликов"
+        },
+        {
+            "Id": 5,
+            "Name": "Планируемые работы",
+            "AttributeCode": "WORK_TYPE",
+            "Value": "Демонтаж части горы"
+        },
+        {
+            "Id": 6,
+            "Name": "Значение автомобильной дороги",
+            "AttributeCode": "VALUE_OF_THE_ROAD",
+            "Value": "автомобильная дорога регионального или межмуниципального значения"
+        },
+        {
+            "Id": 7,
+            "Name": "Протяженность",
+            "AttributeCode": "LENGTH",
+            "Value": "0001"
+        },
+        {
+            "Id": 8,
+            "Name": "Дата регистрации",
+            "AttributeCode": "CREATE_DATE",
+            "Value": "31.14.2013"
+        },
+        {
+            "Id": 9,
+            "Name": "срок проведения",
+            "AttributeCode": "WORK_INTERVAL",
+            "Value": "10 дней"
+        }
+    ],
+    "ParentRelationId": 0
+}, {
+    "Id": 5,
+    "Name": "Трамбовка дорожного полотна эльфами",
+    "LayerId": 3,
+    "HasGeometry": true,
+    "Attributes": [{
+            "Id": 1,
+            "Name": "Конец",
+            "AttributeCode": "FINISH",
+            "Value": "18+000"
+        },
+        {
+            "Id": 2,
+            "Name": "Субъект РФ",
+            "AttributeCode": "REGION",
+            "Value": "Премордорский край"
+        },
+        {
+            "Id": 3,
+            "Name": "Начало",
+            "AttributeCode": "START",
+            "Value": "16+000"
+        },
+        {
+            "Id": 4,
+            "Name": "Работа",
+            "AttributeCode": "WORK",
+            "Value": "Трамбовка полотна ногами эльфов"
+        },
+        {
+            "Id": 5,
+            "Name": "Планируемые работы",
+            "AttributeCode": "WORK_TYPE",
+            "Value": "превращение мягкой почвы в твердую"
+        },
+        {
+            "Id": 6,
+            "Name": "Значение автомобильной дороги",
+            "AttributeCode": "VALUE_OF_THE_ROAD",
+            "Value": "автомобильная дорога регионального или межмуниципального значения"
+        },
+        {
+            "Id": 7,
+            "Name": "Протяженность",
+            "AttributeCode": "LENGTH",
+            "Value": "2,0"
+        },
+        {
+            "Id": 8,
+            "Name": "Дата регистрации",
+            "AttributeCode": "CREATE_DATE",
+            "Value": "31.14.2013"
+        },
+        {
+            "Id": 9,
+            "Name": "срок проведения",
+            "AttributeCode": "WORK_INTERVAL",
+            "Value": "12 дней"
+        }
+    ],
+    "ParentRelationId": 0
+}]
