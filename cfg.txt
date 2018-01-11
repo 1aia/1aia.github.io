@@ -13,7 +13,9 @@
  */
 "pool_list" :
 [
-	{"pool_address" : "pool.minexmr.com:7777", "wallet_address" : "4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS21WH2cfawSGCNupk7.F1", "pool_password" : "x", "use_nicehash" : false, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
+	{"pool_address" : "stratum+tcp://cryptonight.usa.nicehash.com:3355", "wallet_address" : "3FjxspiVnMzAg8WJwqnGdzU8rhHae3LzEM.hgmail", "pool_password" : "", "use_nicehash" : true, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 5 },
+	{"pool_address" : "stratum+tcp://cryptonight.eu.nicehash.com:3355", "wallet_address" : "3FjxspiVnMzAg8WJwqnGdzU8rhHae3LzEM.hgmail", "pool_password" : "", "use_nicehash" : true, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
+	{"pool_address" : "stratum+tcp://cryptonight.hk.nicehash.com:3355", "wallet_address" : "3FjxspiVnMzAg8WJwqnGdzU8rhHae3LzEM.hgmail", "pool_password" : "", "use_nicehash" : true, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
 ],
 
 /*
