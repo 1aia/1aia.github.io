@@ -20,7 +20,6 @@
 	{"pool_address" : "stratum+tcp://cryptonight.in.nicehash.com:3355", "wallet_address" : "3FjxspiVnMzAg8WJwqnGdzU8rhHae3LzEM.hgmail", "pool_password" : "", "use_nicehash" : true, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
 	{"pool_address" : "stratum+tcp://cryptonight.br.nicehash.com:3355", "wallet_address" : "3FjxspiVnMzAg8WJwqnGdzU8rhHae3LzEM.hgmail", "pool_password" : "", "use_nicehash" : true, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
 ],
-],
 
 /*
  * currency to mine
