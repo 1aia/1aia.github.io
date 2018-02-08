@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Тест</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+</head>
+<body>
+<div class="container">
+    
+    <!-- ko if: data -->
+    
+    <div data-bind="foreach: data().hashrate.total">
+        <div class="row">
+            <label class="col col-xs-6 text-xs-right font-weight-bold" data-bind="text: $data"></label>
+        </div>
+    </div>
+
+    <div data-bind="foreach: data().workers">
+        <div class="row">
+            <label class="col col-xs-6 text-xs-right font-weight-bold" data-bind="text: $data[0]"></label>
+        </div>
+    </div>
+    <!-- /ko -->
+
+    <!-- ko if: mainObject -->
+    <div data-bind="foreach: mainObject().Attributes">
+        <div class="row">
+            <label class="col col-xs-6 text-xs-right font-weight-bold" data-bind="text: Name + ':'"></label>
+            <label class="col col-xs-6" data-bind="text: Value"></label>
+        </div>
+    </div>
+    <!-- /ko -->
+
+    <div id="accordion" role="tablist">
+        <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0">
+                    <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">ДТП</a>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body p-a-1">
+                    <!-- ko if: crushInjuryPlaces -->
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="list-group" data-bind="foreach: crushInjuryPlaces">
+                                <a class="list-group-item list-group-item-action" href="#"
+                                   data-bind="text: Name, click: $root.setCrushInjuryDetails, css: { active: $data == $root.crushInjuryPlaceDetails() }">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-8">
+                            <!-- ko if: crushInjuryPlaceDetails -->
+                            <div class="" data-bind="foreach: crushInjuryPlaceDetails().Attributes">
+                                <div class="row">
+                                    <label class="col col-xs-6 text-xs-right font-weight-bold" data-bind="text: Name + ':'"></label>
+                                    <label class="col col-xs-6" data-bind="text: Value"></label>
+                                </div>
+                            </div>
+                            <!-- /ko -->
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                    <!-- ko ifnot: crushInjuryPlaces -->
+                    Loading...
+                    <!-- /ko -->
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" role="tab" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Ремонт
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body p-a-1">
+                    <!-- ko if: roadWorks -->
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="list-group" data-bind="foreach: roadWorks">
+                                <a class="list-group-item list-group-item-action" href="#"
+                                   data-bind="text: Name, click: $root.setRoadWorkDetails, css: { active: $data == $root.roadWorkDetails() }">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-8">
+                            <!-- ko if: roadWorkDetails -->
+                            <div class="" data-bind="foreach: roadWorkDetails().Attributes">
+                                <div class="row">
+                                    <label class="col col-xs-6 text-xs-right font-weight-bold" data-bind="text: Name + ':'"></label>
+                                    <label class="col col-xs-6" data-bind="text: Value"></label>
+                                </div>
+                            </div>
+                            <!-- /ko -->
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                    <!-- ko ifnot: roadWorks -->
+                    Loading...
+                    <!-- /ko -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- /container -->
+
+    <script src="app.js"></script>
+</body>
+</html>
