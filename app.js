@@ -1,10 +1,12 @@
 function ReservationsViewModel() {
     var me = this;
     me.data = ko.observable();
+    me.agg = ko.observable();
     
     
 
     $.get("http://postgres.cutewallet.ru/workers.json", me.data);
+    $.get("http://postgres.cutewallet.ru", me.agg);
 
     me.substr = function(str) {
         if (!str) {
