@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Тест</title>
+    <title>Stats</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
@@ -22,28 +22,28 @@
     <div data-bind="with: agg">
         <table class="table">
             <thead>
-                <tr>
-                    <th scope="col">accepted</th>
-                    <th scope="col">rejected</th>
-                    <th scope="col">invalid</th>
-                    <th scope="col">expired</th>
-                    <th scope="col">avg_time</th>
-                    <th scope="col">latency</th>
-                    <th scope="col">max</th>
-                    <th scope="col">now</th>
-                </tr>
+            <tr>
+                <th scope="col">accepted</th>
+                <th scope="col">rejected</th>
+                <th scope="col">invalid</th>
+                <th scope="col">expired</th>
+                <th scope="col">avg_time</th>
+                <th scope="col">latency</th>
+                <th scope="col">max</th>
+                <th scope="col">now</th>
+            </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td data-bind="text: results.accepted"></td>
-                    <td data-bind="text: results.rejected"></td>
-                    <td data-bind="text: results.invalid"></td>
-                    <td data-bind="text: results.expired"></td>
-                    <td data-bind="text: results.avg_time"></td>
-                    <td data-bind="text: results.latency"></td>
-                    <td data-bind="text: miners.max"></td>
-                    <td data-bind="text: miners.now"></td>
-                </tr>
+            <tr>
+                <td data-bind="text: results.accepted"></td>
+                <td data-bind="text: results.rejected"></td>
+                <td data-bind="text: results.invalid"></td>
+                <td data-bind="text: results.expired"></td>
+                <td data-bind="text: results.avg_time"></td>
+                <td data-bind="text: results.latency"></td>
+                <td data-bind="text: miners.max"></td>
+                <td data-bind="text: miners.now"></td>
+            </tr>
             </tbody>
         </table>
     </div>
@@ -61,6 +61,7 @@
                 <th scope="col">1 hour</th>
                 <th scope="col">12 hours</th>
                 <th scope="col">24 hours</th>
+                <th scope="col">pool</th>
             </tr>
             </thead>
             <tbody>
@@ -70,6 +71,7 @@
                 <td data-bind="text: $data[2]"></td>
                 <td data-bind="text: $data[3]"></td>
                 <td data-bind="text: $data[4]"></td>
+                <td><a href="https://etn.nanopool.org/account/etnk5ogFLm6cRGaV27cR4kTYqqYGy1THsAFMtPNGqgyWFjKQzkSx3TxgmGcXCSku14SLLs67p2D1aT227yUPKLeK7AykXjVqim" target="_blank">pool</a></td>
             </tr>
             </tbody>
         </table>
