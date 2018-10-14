@@ -5,8 +5,8 @@ function ReservationsViewModel() {
     
     
 
-    $.get("http://postgres.electall.ru:82/workers.json", me.data);
-    $.get("http://postgres.electall.ru:82", me.agg);
+    $.get("http://postgres.electall.ru:81/workers.json", me.data);
+    $.get("http://postgres.electall.ru:81", me.agg);
 
     me.substr = function(str) {
         if (!str) {
