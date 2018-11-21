@@ -1,28 +1,21 @@
 function ReservationsViewModel() {
     var me = this;
     me.data = ko.observable();
-    me.agg = ko.observable();
-    
-    
 
-    $.get("http://postgres.electall.ru:82/workers.json", me.data);
-    $.get("http://postgres.electall.ru:82", me.agg);
+    var url = "https://api.nanopool.org/v1/xmr/user/4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS21WH2cfawSGCNupk7";
 
-    me.substr = function(str) {
-        if (!str) {
-            return '';
-        }
-
-        if (str.length > 10) {
-            return str.substring(0, 10);
-        }
-
-        return str;
-    }
-
-    me.timestamp = function (unix_timestamp) {
-        return new Date(unix_timestamp).toLocaleString();
-    }
+    $.ajax({
+            url: url,
+            type: "GET",
+            crossDomain: true,
+            dataType: "json",
+            success: function (response) {
+                me.data(response.data);
+            },
+            error: function (xhr, status) {
+                location.reload();
+            }
+        });
 }
 
 var model = new ReservationsViewModel();

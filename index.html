@@ -13,111 +13,80 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <style>
+        tr.total td {
+            font-weight: bold
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    
-    <!-- ko if: agg -->
+    <div class="container">
+        <!-- ko if: data -->
+        <!-- ko with: data -->
 
-    <div data-bind="with: agg">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">accepted</th>
-                <th scope="col">rejected</th>
-                <th scope="col">invalid</th>
-                <th scope="col">expired</th>
-                <th scope="col">avg_time</th>
-                <th scope="col">latency</th>
-                <th scope="col">max</th>
-                <th scope="col">now</th>                
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td data-bind="text: results.accepted"></td>
-                <td data-bind="text: results.rejected"></td>
-                <td data-bind="text: results.invalid"></td>
-                <td data-bind="text: results.expired"></td>
-                <td data-bind="text: results.avg_time"></td>
-                <td data-bind="text: results.latency"></td>
-                <td data-bind="text: miners.max"></td>
-                <td data-bind="text: miners.now"></td>                
-            </tr>
-            </tbody>
-        </table>
-    </div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">balance</th>
+                        <th scope="col">unconfirmed</th>
+                        <th scope="col">pool</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-bind="text: balance"></td>
+                        <td data-bind="text: unconfirmed_balance"></td>
+                        <td><a href="https://xmr.nanopool.org/account/4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS21WH2cfawSGCNupk7" target="_blank">pool</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <!-- /ko -->
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">hashrate</th>
+                        <th scope="col">rating</th>
+                        <th scope="col">h1</th>
+                        <th scope="col">h3</th>
+                        <th scope="col">h6</th>
+                        <th scope="col">h12</th>
+                        <th scope="col">h24</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="total">
+                        <td></td>
+                        <td data-bind="text: hashrate"></td>
+                        <td></td>
+                        <td data-bind="text: avgHashrate.h1"></td>
+                        <td data-bind="text: avgHashrate.h3"></td>
+                        <td data-bind="text: avgHashrate.h6"></td>
+                        <td data-bind="text: avgHashrate.h12"></td>
+                        <td data-bind="text: avgHashrate.h24"></td>
+                    </tr>
+                    <!-- ko foreach: workers -->
+                        <tr>
+                            <td data-bind="text: id"></td>
+                            <td data-bind="text: hashrate"></td>
+                            <td data-bind="text: rating"></td>
+                            <td data-bind="text: h1"></td>
+                            <td data-bind="text: h3"></td>
+                            <td data-bind="text: h6"></td>
+                            <td data-bind="text: h12"></td>
+                            <td data-bind="text: h24"></td>
+                        </tr>
+                    <!-- /ko -->
+                </tbody>
+            </table>
+        </div>
+        <!-- /ko -->
+        <!-- /ko -->
 
-    <!-- ko if: data -->
-
-    <div data-bind="with: data().hashrate.total">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">1 min</th>
-                <th scope="col">10 min</th>
-                <th scope="col">1 hour</th>
-                <th scope="col">12 hours</th>
-                <th scope="col">24 hours</th>
-                <th scope="col">pool</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td data-bind="text: $data[0]"></td>
-                <td data-bind="text: $data[1]"></td>
-                <td data-bind="text: $data[2]"></td>
-                <td data-bind="text: $data[3]"></td>
-                <td data-bind="text: $data[4]"></td>  
-                <td><a href="https://xmr.nanopool.org/account/4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS21WH2cfawSGCNupk7" target="_blank">pool</a></td>              
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div >
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Worker</th>
-                <th scope="col">IP</th>
-                <th scope="col">Count</th>
-                <th scope="col">Accepted</th>
-                <th scope="col">Rejected</th>
-                <th scope="col">Invalid</th>
-                <th scope="col">Total</th>
-                <th scope="col">Last</th>
-                <th scope="col">1m</th>
-                <th scope="col">10m</th>
-                <th scope="col">1h</th>
-                <th scope="col">12h</th>
-                <th scope="col">24h</th>
-            </tr>
-            </thead>
-            <tbody data-bind="foreach: data().workers">
-            <tr>
-                <td data-bind="text: $root.substr($data[0])"></td>
-                <td data-bind="text: $data[1]"></td>
-                <td data-bind="text: $data[2]"></td>
-                <td data-bind="text: $data[3]"></td>
-                <td data-bind="text: $data[4]"></td>
-                <td data-bind="text: $data[5]"></td>
-                <td data-bind="text: $data[6]"></td>
-                <td data-bind="text: $root.timestamp($data[7])"></td>
-                <td data-bind="text: $data[8]"></td>
-                <td data-bind="text: $data[9]"></td>
-                <td data-bind="text: $data[10]"></td>
-                <td data-bind="text: $data[11]"></td>
-                <td data-bind="text: $data[12]"></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <!-- /ko -->
-
-</div> <!-- /container -->
+    </div> <!-- /container -->
 
     <script src="app2.js"></script>
 </body>
